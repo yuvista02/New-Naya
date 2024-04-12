@@ -1,0 +1,22 @@
+{
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+    "angular.forceStrictTemplates": true,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "sonarlint.rules": {
+        "Web:TableHeaderHasIdOrScopeCheck": {
+            "level": "off"
+        },
+        "typescript:S4138": {
+            "level": "off"
+        }
+    },
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "debug.disassemblyView.showSourceCode": false,
+    "liveServer.settings.file": "/WebClient/dist/moonstone/staging",
+    "liveServer.settings.port": 8080,
+    "workbench.startupEditor": "none",
+    "extensions.ignoreRecommendations": true,
+    "workbench.colorTheme": "Default Light Modern",
+}

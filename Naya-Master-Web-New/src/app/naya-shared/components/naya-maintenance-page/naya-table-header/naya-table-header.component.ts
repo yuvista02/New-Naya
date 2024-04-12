@@ -7,6 +7,7 @@ import { InputTextModule }                          from "primeng/inputtext";
 import { TooltipModule }                            from "primeng/tooltip";
 // Naya Imports
 import { NayaTemplateDirective } from "@naya-shared/directives/naya-template.directive";
+import { NayaDateFormatSwitch } from "../../naya-date-format-switch/naya-date-format-switch.component";
 @Component({
     selector: "naya-table-header",
     templateUrl: "./naya-table-header.component.html",
@@ -17,7 +18,8 @@ import { NayaTemplateDirective } from "@naya-shared/directives/naya-template.dir
         InputTextModule,
         ButtonModule,
         TooltipModule,
-        FileUploadModule
+        FileUploadModule,
+        NayaDateFormatSwitch
     ],
 })
 export class NayaTableHeaderComponent {
@@ -39,6 +41,8 @@ export class NayaTableHeaderComponent {
     @Output() public NSEventOnSearchInput = new EventEmitter();
     @Output() public NSEventOnClickSecondary = new EventEmitter();
     @Output() public NSEventOnUploadFile: EventEmitter<FileUploadHandlerEvent> = new EventEmitter();
+    @Output() public NSEventOnClickDateTimeFormat = new EventEmitter();
+
     @ViewChild('NSFileUpload') NSFileUpload!: FileUpload;
     @ContentChild(NayaTemplateDirective, { static: false }) NSTemplateDirective!: NayaTemplateDirective;
     public NSFilterTemplate: TemplateRef<any> | null = null;
@@ -75,5 +79,9 @@ export class NayaTableHeaderComponent {
 
     public MSClearFile(): void {
         this.NSFileUpload.clear();
+    }
+    
+    public OnChangeDateFormatSwitch(event: string) {
+        this.NSEventOnClickDateTimeFormat.emit(event);
     }
 }

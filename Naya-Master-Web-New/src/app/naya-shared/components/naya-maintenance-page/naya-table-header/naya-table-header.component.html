@@ -17,6 +17,13 @@
     <div class="naya-button flex gap-2">
         <ng-container *ngTemplateOutlet="NSFilterTemplate"></ng-container>
 
+        <span class="naya-date-switch">
+            <naya-date-format-switch
+                *ngIf="NSDisplayDateTimeFormat"
+                (NSOutputDateFormatSwitch)="OnChangeDateFormatSwitch($event)"
+            ></naya-date-format-switch>
+        </span>
+
         <span
             *ngIf="NSEnableSearch"
             class="p-input-icon-left naya-search"

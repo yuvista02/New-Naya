@@ -1,0 +1,31 @@
+<table>
+    <tr>
+        <th>
+            <div
+                [ngStyle]="{
+                    color: !NSTimeSwitch ? '#3F51B5' : '#756c6c'
+                }"
+            >
+                {{ NSSwitchOffValue }}
+            </div>
+        </th>
+        <th>
+            <p-inputSwitch
+                [(ngModel)]="NSTimeSwitch"
+                (onChange)="OnChangeDateFormatSwitch($event)"
+                name="LocalTime"
+                class="ui-g-1 ui-md-1;"
+                styleClass="ui-inputswitch"
+            ></p-inputSwitch>
+        </th>
+        <th>
+            <div
+                [ngStyle]="{
+                    color: NSTimeSwitch ? '#3F51B5' : '#756c6c'
+                }"
+            >
+                {{ NSSwitchOnValue }}
+            </div>
+        </th>
+    </tr>
+</table>

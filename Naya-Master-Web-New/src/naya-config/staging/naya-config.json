@@ -6,7 +6,8 @@
         "redirectUri": "/"
     },
     "naya": {
-        "apiUrl": "https://localhost:44317"
+        "apiUrl": "https://localhost:44317",
+        "apiUrls": "https://nayaapi-dev.azurewebsites.net"
     },
     "appInsightsInstrumentationKey": "20759392-7cde-48f7-96b4-eae8da892e77"
 }
