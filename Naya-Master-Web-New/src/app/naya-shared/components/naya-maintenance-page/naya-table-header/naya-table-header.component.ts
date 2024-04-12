@@ -34,7 +34,8 @@ export class NayaTableHeaderComponent {
     @Input() public NSDisplaySecondaryButton: boolean = false;
     @Input() public NSSecondaryButtonIcon: string = String.empty;
     @Input() public NSSecondaryButtonToolTip: string = String.empty;
-    
+    @Input() public NSDisplayDateTimeFormat: boolean = false;
+
     @Output() public NSEventOnClickRouteBack = new EventEmitter();
     @Output() public NSEventOnClickCreate = new EventEmitter();
     @Output() public NSEventOnClickFind = new EventEmitter();

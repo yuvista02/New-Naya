@@ -12,7 +12,7 @@
         <th>
             <p-inputSwitch
                 [(ngModel)]="NSTimeSwitch"
-                (onChange)="OnChangeDateFormatSwitch($event)"
+                (onChange)="OnChangeDateFormatSwitch($event.checked)"
                 name="LocalTime"
                 class="ui-g-1 ui-md-1;"
                 styleClass="ui-inputswitch"

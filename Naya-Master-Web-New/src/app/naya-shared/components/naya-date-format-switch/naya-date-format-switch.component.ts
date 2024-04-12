@@ -1,9 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
-import { TableCheckbox } from "primeng/table";
+import { Component, EventEmitter, OnInit, Output }    from "@angular/core";
+import { NgStyle }                                    from "@angular/common";
+import { FormsModule }                                from "@angular/forms";
+import { InputSwitchModule }                          from "primeng/inputswitch";
 
 @Component({
     selector: "naya-date-format-switch",
-    templateUrl: "./naya-date-format-switch.component.html"
+    templateUrl: "./naya-date-format-switch.component.html",
+    standalone: true,
+    imports: [
+      NgStyle, 
+      InputSwitchModule,
+      FormsModule,
+    ]
 })
 export class NayaDateFormatSwitch implements OnInit {
     @Output() private NSOutputDateFormatSwitch: EventEmitter<any> = new EventEmitter();
@@ -19,8 +27,8 @@ export class NayaDateFormatSwitch implements OnInit {
       this.NSOutputDateFormatSwitch.emit(DateTimeFormat.UtcToLocal);
     }
 
-    public OnChangeDateFormatSwitch(event: TableCheckbox) {
-      const selectedFormat = event.checked ? DateTimeFormat.NayaRegular : DateTimeFormat.UtcToLocal;
+    public OnChangeDateFormatSwitch(checked: boolean) {
+      const selectedFormat = checked ? DateTimeFormat.NayaRegular : DateTimeFormat.UtcToLocal;
       this.NSOutputDateFormatSwitch.emit(selectedFormat);
     }
 }
