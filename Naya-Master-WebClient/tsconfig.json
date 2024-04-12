@@ -1,0 +1,50 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    /* outside of strict parameter */
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true, /* Option 'exactOptionalPropertyTypes' cannot be specified without specifying option 'strictNullChecks'*/
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
+    "lib": [
+      "ES2022",
+      "dom"
+    ],
+    "paths": {
+        "@app/*": ["src/app/*"],
+        "@app-main/*": ["src/app/app-main/*"],
+        "@app-layout/*": ["src/app/app-layout/*"],
+        "@app-pages/*": ["src/app/app-pages/*"],
+        "@app-code/*": ["src/app/app-code/*"],
+        "@naya-shared/*": ["src/app/naya-shared/*"],
+        "@naya-core/*": ["src/app/naya-core/*"],
+        "@naya-domain/*": ["src/app/naya-domain/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

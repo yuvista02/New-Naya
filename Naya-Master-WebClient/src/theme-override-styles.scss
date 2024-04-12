@@ -1,0 +1,87 @@
+@import "../node_modules/primeng/resources/primeng.min.css";
+@import "../node_modules/primeflex/primeflex.scss";
+@import "../node_modules/primeicons/primeicons.css";
+
+.p-menuitem {
+    padding: 5px 20px;
+}
+
+.layout-content {
+    padding: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    flex: 1 1 0;
+}
+
+.p-button {
+    margin-right: 0.5em;
+    min-width: 130px;
+}
+
+.p-button.p-button-secondary {
+    color: #212121;
+    background-color: #ffffff;
+
+    &:enabled:active {
+        color: #212121;
+        background-color: #ffffff;
+    }
+
+    &:enabled:hover {
+        color: #212121;
+        background-color: #f3f3f3;
+    }
+
+    &:enabled:focus {
+        color: #212121;
+        background-color: #ffffff;
+    }
+}
+
+.p-toolbar {
+    padding-bottom: 0.3rem !important;
+    padding-top: 0.6em !important;
+    background: #142689 !important;
+    color: white !important;
+}
+
+.update-precedence {
+    display: block;
+    position: relative;
+    opacity: .5;
+    cursor: progress;
+  
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+
+  .highlight {
+    color: white !important;
+  }
+
+  .p-button:disabled {
+      color: white !important;
+  }
+
+  .p-message-detail {
+      white-space: pre;
+  }
+
+  .layout-topbar-action {
+      margin: 0px !important;
+  }
+
+  .naya-float-right {
+    float: right;
+  }
+
+  .naya-text-right {
+    text-align: right;
+  }

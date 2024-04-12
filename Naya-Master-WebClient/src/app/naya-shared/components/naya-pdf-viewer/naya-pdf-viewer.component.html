@@ -1,0 +1,74 @@
+<ng-container>
+    <div *ngIf="NSLoading && NSShowAdditionalFields">
+        <div class="naya-text-center loader">
+            <i class="pi pi-spin pi-spinner naya-icon-spinner"></i>
+        </div>
+    </div>
+    <div *ngIf="NSPdfSource" [ngClass]="{ 'naya-hide-pdf-viewer': NSLoading }">
+        <div class="grid" #NSNavigationBlock>
+            <div class="col-3" #NSPageNumberBlock>
+                <span
+                    class="naya-pdf-page-number"
+                    *ngIf="NSDisplayPageNavigation"
+                    >Page: {{ NSPageNumber }} / {{ NSTotalPages }}</span
+                >
+            </div>
+            <div
+                class="col-6 naya-navigation-icon-div"
+                #NSPageNavigationBlock
+            >
+                <ng-container *ngIf="NSDisplayPageNavigation && NSShowAdditionalFields">
+                    <i
+                        class="pi pi-caret-left naya-icon"
+                        tooltipPosition="bottom"
+                        pTooltip="Previous"
+                        (click)="NSOnClickPrevious()"
+                    ></i>
+                    <input
+                        class="naya-box-page-number"
+                        type="number"
+                        [(ngModel)]="NSPageNumber"
+                        (keydown.enter)="NSOnChangeInputPageNumber()"
+                        (focusout)="NSOnChangeInputPageNumber()"
+                    />
+                    <i
+                        class="pi pi-caret-right naya-icon"
+                        pTooltip="Next"
+                        tooltipPosition="bottom"
+                        (click)="NSOnClickNext()"
+                    ></i>
+                </ng-container>
+            </div>
+            <div class="col-3" #NSZoomBlock>
+                <span class="naya-zoom-icon-span" *ngIf="NSDisplayZoomControl">
+                    <i
+                        class="pi pi-search-plus naya-icon"
+                        tooltipPosition="bottom"
+                        pTooltip="Zoom In"
+                        (click)="NSOnClickZoomIn()"
+                    ></i>
+                    <i
+                        class="pi pi-search-minus naya-icon"
+                        pTooltip="Zoom Out"
+                        tooltipPosition="bottom"
+                        (click)="NSOnClickZoomOut()"
+                    ></i>
+                </span>
+            </div>
+        </div>
+        <div class="naya-pdf-container-block">
+            <pdf-viewer
+                [(page)]="NSPageNumber"
+                [src]="NSPdfSource"
+                [render-text]="true"
+                [original-size]="false"
+                [show-all]="false"
+                [zoom]="NSZoom"
+                [zoom-scale]="'page-width'"
+                (after-load-complete)="NSPdfAfterLoadComplete($event)"
+                [style.width]="NSPdfWidth"
+                [style.height]="NSPdfHeight"
+            ></pdf-viewer>
+        </div>
+    </div>
+</ng-container>

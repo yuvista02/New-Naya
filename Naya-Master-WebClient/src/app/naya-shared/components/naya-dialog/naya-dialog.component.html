@@ -1,0 +1,68 @@
+<p-dialog
+    header="{{ Header }}"
+    [(visible)]="DisplayDialog"
+    [modal]="true"
+    styleClass="w-70per"
+    [baseZIndex]="10000"
+    [draggable]="false"
+    [resizable]="false"
+>
+    <p
+        class="naya-dialog-message"
+        [innerHTML]="Message"
+    ></p>
+    <p-footer>
+        <div class="white-space-pre-wrap text-left">{{Footer}}</div>
+        <div class="naya-text-align">
+            <button
+                *ngIf="DisplayConfirmButton"
+                type="button"
+                class="p-button-raised mr-2 mb-2"
+                pButton
+                pRipple
+                icon="pi pi-check"
+                (click)="OnConfirmClick()"
+                label="{{ ConfirmButtonLabel }}"
+            ></button>
+            <button
+                type="button"
+                pButton
+                icon="pi pi-times"
+                *ngIf="DisplayRejectButton"
+                (click)="OnRejectClick()"
+                label="No"
+                lass="p-button-raised p-button-secondary mr-2 mb-2"
+            ></button>
+        </div>
+    </p-footer>
+</p-dialog>
+
+<p-sidebar
+    [(visible)]="DisplaySideBar"
+    position="bottom"
+    [baseZIndex]="10000"
+    [showCloseIcon]="false"
+>
+    <div class="naya-text-align">
+        <h3 class="naya-message">{{ Message }}</h3>
+        <button
+            type="button"
+            class="p-button-success mr-2 mb-2"
+            pButton
+            pRipple
+            icon="pi pi-check"
+            (click)="OnConfirmClick()"
+            label="{{ ConfirmButtonLabel }}"
+        ></button>
+        <button
+            type="button"
+            pButton
+            pRipple
+            icon="pi pi-times"
+            *ngIf="DisplayRejectButton"
+            (click)="OnRejectClick()"
+            label="No"
+            class="p-button-raised mr-2 mb-2"
+        ></button>
+    </div>
+</p-sidebar>

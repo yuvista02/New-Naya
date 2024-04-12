@@ -1,0 +1,16 @@
+<naya-form-control
+    [NSLabel]="field.label"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <p-calendar
+            [formControlName]="field.name"
+            dataType="string"
+            placeholder="MM/DD/YYYY"
+            [monthNavigator]="true"
+            [yearNavigator]="true"
+            yearRange="1900:{{currentYear + 10}}"
+        ></p-calendar>
+    </div>
+</naya-form-control>

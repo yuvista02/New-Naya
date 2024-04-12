@@ -1,0 +1,34 @@
+.precedence-actions {
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.precedence-actions .precedence-button-up {
+    position: absolute;
+    margin-left: -15px;
+    bottom: 18px;
+}
+
+.precedence-actions .precedence-button-down {
+    position: absolute;
+    top: 13px;
+    margin-left: -15px;
+}
+
+.precedence-actions span.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.2;
+}
+
+.precedence-actions i:hover {
+    color: #1565c0;
+    transform: scale(1.2);
+}
+
+.naya-precedence-font-size {
+    font-size: 1.2rem;
+}

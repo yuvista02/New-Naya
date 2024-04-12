@@ -1,0 +1,19 @@
+:host {
+  display: block;
+}
+
+#form-sticky-nav {
+  // position: fixed;
+  // margin-top: -1em;
+  z-index: 1;
+}
+
+#form-navbar-spacer {
+  height: 46px;
+  margin-bottom: -11px;
+}
+
+#nav-tab {
+  position: fixed;
+  z-index: 200;
+}

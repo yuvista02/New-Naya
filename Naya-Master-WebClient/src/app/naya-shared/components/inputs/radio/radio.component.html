@@ -1,0 +1,16 @@
+<naya-form-control
+    [NSLabel]="field.label"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <p-radioButton
+            *ngFor="let v of field.options"
+            [ngStyle]="{marginRight: '2em'}"
+            [value]="v.key"
+            [label]="v.label"
+            [name]="field.name"
+            [formControlName]="field.name"
+        ></p-radioButton>
+    </div>
+</naya-form-control>

@@ -1,0 +1,49 @@
+:host {
+    padding: 50px 0;
+    text-align: center;
+    display: block;
+}
+
+.naya-loading {
+    position: fixed !important;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #fff;
+    vertical-align: top;
+    min-height: 100vh;
+    padding: 0px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.naya-loading:after {
+    content: attr(ms-loading-message);
+    display: inline;
+    position: absolute;
+    left: 48%;
+    top: 45%;
+}
+
+.naya-loading:before {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid var(--primary-300);
+    border-bottom: 3px solid var(--primary-300);
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    content: "";
+    display: inline;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}

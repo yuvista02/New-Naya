@@ -1,0 +1,12 @@
+<naya-form-control
+    [NSLabel]="field.label"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <p-dropdown
+            [options]="field.options"
+            [formControlName]="field.name"
+        ></p-dropdown>
+    </div>
+</naya-form-control>

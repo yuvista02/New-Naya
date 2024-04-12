@@ -1,0 +1,59 @@
+.naya-div-pdf-loading {
+    margin-top: calc(100vh - 600px);
+}
+.naya-pdf-container-block {
+    border-style: groove;
+}
+.naya-pdf-page-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4c5054;
+}
+
+.naya-navigation-icon-div {
+    text-align: center;
+}
+.naya-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #4c5054;
+    padding: 2px;
+}
+
+naya-icon:hover {
+    transform: scale(1.2);
+}
+
+.naya-zoom-icon-span {
+    float: right;
+}
+
+.naya-check-icon {
+    color: green;
+}
+
+.naya-text-center {
+    text-align: center;
+}
+
+.naya-icon-spinner {
+    font-size: 2rem;
+}
+
+.naya-hide-pdf-viewer {
+    opacity: 0;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: none;
+}
+
+.naya-box-page-number {
+    padding-top: 5px;
+    text-align: center;
+    width: 3em;
+    font-size: large;
+}

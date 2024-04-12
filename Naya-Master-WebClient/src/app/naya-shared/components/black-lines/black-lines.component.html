@@ -1,0 +1,8 @@
+<ng-template #noBlackLine>No difference found.</ng-template>
+<ng-container *ngIf="NSBlackLineResult.length > 1; else noBlackLine">
+    <ng-container *ngFor="let dmp of NSBlackLineResult">
+        <span [ngClass]="dmp.class">
+            {{ dmp.word }}
+        </span>
+    </ng-container>
+</ng-container>

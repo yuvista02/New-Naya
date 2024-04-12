@@ -1,0 +1,111 @@
+<ul
+    class="naya-notification-outer-block"
+    *ngIf="NotificationList?.length"
+>
+    <li
+        *ngFor="let notification of NotificationList"
+        role="menuitem"
+    >
+        <div>
+            <div
+                class="grid naya-notification-inner-block"
+                [ngClass]="{ unread: notification?.readStatus === 'unread' }"
+            >
+                <div class="naya-div-timestamp">
+                    {{ notification?.timeStamp }}
+                </div>
+                <div class="naya-notification-status-icon">
+                    <i
+                        class="pi pi-check naya-icon-check"
+                        *ngIf="notification?.status === 'Complete'"
+                    ></i>
+                    <i
+                        class="pi pi pi-clock naya-icon-clock"
+                        *ngIf="notification?.status === 'In Progress'"
+                    ></i>
+                    <i
+                        class="pi pi pi-info naya-icon-warning"
+                        *ngIf="notification?.status === 'Warning'"
+                    ></i>
+                    <i
+                        class="pi pi pi-info naya-icon-info"
+                        *ngIf="notification?.status === 'Info'"
+                    ></i>
+                    <i
+                        class="pi pi-times naya-icon-times"
+                        *ngIf="notification?.status === 'Error'"
+                    ></i>
+                    <i
+                        class="notifications-none"
+                        *ngIf="!notification?.status"
+                    ></i>
+                </div>
+                <div class="naya-notification-status-name">
+                    {{ notification?.status }}:
+                </div>
+                <div class="naya-notification-name">
+                    <span [innerText]="notification?.name"></span>
+                </div>
+                <div>
+                    <button
+                        *ngIf="notification?.modifiedFieldList"
+                        pButton
+                        pRipple
+                        type="button"
+                        pTooltip="View Timeline"
+                        tooltipPosition="bottom"
+                        icon="pi pi-chevron-down"
+                        (click)="op.toggle($event); $event.stopPropagation()"
+                        class="p-button-success"
+                    ></button>
+
+                    <p-overlayPanel
+                        #op
+                        (onClick)="op.hide()"
+                        [style]="{ 'margin-left': '-40px' }"
+                    >
+                        <ng-template pTemplate="content">
+                            <naya-notification-timeline-view
+                                [MSNotification]="notification"
+                                [MSNotificationMessage]="notification.message"
+                                [MSModifiedFieldList]="notification.modifiedFieldList"
+                            ></naya-notification-timeline-view>
+                        </ng-template>
+                    </p-overlayPanel>
+                </div>
+                <button
+                    type="button"
+                    class="p-button-raised p-button-rounded mr-2 mb-2 naya-notification-button"
+                    pTooltip="Download"
+                    *ngIf="notification?.fileResponse"
+                    tooltipPosition="bottom"
+                    pButton
+                    icon="pi pi-download"
+                    (click)="
+                        OnDownloadFileClick(notification);
+                        $event.stopPropagation()
+                    "
+                ></button>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<ul *ngIf="!NotificationList?.length">
+    <li
+        role="menuitem"
+        class="naya-notification-empty"
+    >
+        <span>Empty</span>
+    </li>
+</ul>
+<ul *ngIf="NotificationList?.length">
+    <hr />
+    <li
+        role="menuitem"
+        (click)="ClearNotifications()"
+        class="naya-notification-clear"
+    >
+        <span>Clear</span>
+    </li>
+</ul>

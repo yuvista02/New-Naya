@@ -1,0 +1,102 @@
+.actions-row {
+    text-align: right;
+    padding-top: 15px;
+
+    .ui-button,
+    naya-custom-dropdown {
+        margin-left: 10px;
+    }
+}
+
+.naya-card {
+    margin-top: 0px;
+}
+
+.naya-text-center {
+    text-align: center;
+}
+
+.naya-footer-item-count {
+    text-align: right;
+    margin-top: 10px;
+    float: right;
+}
+
+naya-custom-dropdown {
+    display: inline-block;
+    width: 25px;
+    vertical-align: middle;
+
+    .btn-more-dropdown-icon {
+        float: right;
+    }
+
+    .btn-more-dropdown {
+        float: right;
+
+        .ui-splitbutton {
+            box-shadow: none;
+            margin-bottom: -5px;
+
+            > .ui-button {
+                opacity: 0;
+
+                &:first-child {
+                    display: none;
+                }
+
+                &:last-child {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}
+.naya-table-row {
+   cursor: pointer;
+}
+.naya-item-count {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.naya-action-column {
+    text-align: right;
+    white-space: nowrap;
+}
+.naya-custom-button-icon {
+    font-size: 1.7rem;
+}
+
+.toolbar-separator {
+    vertical-align: middle;
+    font-size: 0.5rem;
+    margin-right: 12px;
+    margin-left: 6px;
+}
+
+.modal-content{
+    font-size: 14px;
+}
+
+.naya-checkbox {
+    margin-bottom: 4px;
+}
+
+.naya-choose-file-control {
+    margin-top: 10px;
+    width: 6.5em;
+}
+
+.font-awesome-icon {
+    position: relative !important;
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 1.1em;
+}
+
+.font-awesome .p-button {
+    min-width: 0px !important;
+}
+  

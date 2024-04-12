@@ -1,0 +1,29 @@
+<ul>
+    <ng-container
+        *ngFor="
+            let data of NSModifiedFieldList;
+        "
+    >
+        <li>
+            <strong>{{ data.PropertyName }}</strong>
+            was changed from
+            <strong>
+                <span *ngIf="data.OriginalValue">{{
+                    data.OriginalValue
+                }}</span>
+                <span *ngIf="!data.OriginalValue"
+                    >No Value</span
+                >
+            </strong>
+            to
+            <strong>
+                <span *ngIf="data.ModifiedValue">{{
+                    data.ModifiedValue
+                }}</span>
+                <span *ngIf="!data.ModifiedValue"
+                    >No Value</span
+                >
+            </strong>
+        </li>
+    </ng-container>
+</ul>

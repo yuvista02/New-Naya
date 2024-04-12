@@ -1,0 +1,88 @@
+<div class="naya-table-page">
+    <ng-container
+        #Container
+        *ngIf="NSHasItems"
+    >
+        <ng-content></ng-content>
+        <div class="naya-item-count">
+            {{ NSItemCount }}
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!NSHasItems">
+        <div class="grid">
+            <button *ngIf="NSDisplayRouteBackButton"
+                pButton
+                pRipple
+                type="button"
+                icon="pi pi-arrow-left"
+                (click)="NSOnClickRouteBack()"
+                class="p-button-rounded p-button-raised mr-2 mb-2 naya-btn-back"
+                pTooltip="Go Back"
+                tooltipPosition="bottom"
+            ></button>
+            <h5>{{ NSPageTitle }}</h5>
+        </div>
+        <naya-empty-state>
+            <button
+                *ngIf="NSDisplayCreateButton"
+                pButton
+                pRipple
+                type="button"
+                (click)="NSOnClickCreate()"
+                icon="pi pi-plus"
+                class="p-button-rounded p-button-raised mr-2 mb-2"
+                pTooltip="Create New {{ NSPageTitle }}"
+                tooltipPosition="bottom"
+            ></button>
+            <button
+                *ngIf="NSDisplayFindButton"
+                pButton
+                pRipple
+                type="button"
+                (click)="OnClickFind()"
+                icon="pi pi-search"
+                class="p-button-rounded p-button-raised mr-2 mb-2"
+                pTooltip="Find {{ NSPageTitle }}"
+                tooltipPosition="bottom"
+            ></button>
+            <button
+                *ngIf="NSDisplaySecondaryButton"
+                pButton
+                pRipple
+                type="button"
+                (click)="OnClickSecondary()"
+                icon="{{ NSSecondaryButtonIcon }}"
+                class="p-button-rounded p-button-raised mr-2 mb-2"
+                pTooltip="{{ NSSecondaryButtonToolTip }}"
+                tooltipPosition="bottom"
+            ></button>
+
+            <p-fileUpload
+                *ngIf="NSDisplayUploadButton"
+                class="mr-2 mb-2 inline-block"
+                styleClass="border-circle p-button-raised"
+                #NSFileUpload
+                mode="basic"
+                [accept]="NSAcceptedFileExtension"
+                [maxFileSize]="1000000"
+                [auto]="true"
+                (uploadHandler)="OnUploadFile($event)"
+                [customUpload]="true"
+                chooseIcon="pi pi-upload"
+                pTooltip="Import {{NSPageTitle}}"
+            ></p-fileUpload>
+
+        </naya-empty-state>
+
+        <naya-empty-state
+            *ngIf="
+                !NSHasItems &&
+                !NSDisplayCreateButton &&
+                !NSDisplayFindButton &&
+                !NSDisplaySecondaryButton
+            "
+            label="No Items To Show"
+        >
+        </naya-empty-state>
+    </ng-container>
+</div>

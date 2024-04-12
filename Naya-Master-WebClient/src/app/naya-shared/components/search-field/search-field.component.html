@@ -1,0 +1,13 @@
+<input
+    pInputText
+    type="text"
+    placeholder="Search"
+    [(ngModel)]="NSSearchTerm"
+    class="naya-search"
+    (input)="NSOnSearchFieldInputChange()"
+/>
+<i
+    class="btn-clear"
+    [ngClass]="{ 'pi pi-times': HasSearchFieldValue() }"
+    (click)="NSOnButtonClearClick()"
+></i>

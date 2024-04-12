@@ -1,0 +1,12 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 10:06:44 AM -->
+<naya-edit-page [NSLoading]="NSLoading"
+                [NSPageTitle]="NSPageTitle"
+                [NSDisplayRemoveButton]="NSDisplayRemoveButton"
+                (NSOnClickEventRemove)="OnClickRemove()">
+    <ng-container *ngIf="!NSLoading">
+        <naya-roles-form #NSForm
+                       [NSNayaRoleID]="NSNayaRoleID"
+                       [NSNayaRoleGet]="NSNayaRoleGet">
+        </naya-roles-form>
+    </ng-container>
+</naya-edit-page>

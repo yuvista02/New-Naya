@@ -1,0 +1,58 @@
+.naya-breadcrumb {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+    min-height: 35px;
+}
+
+.naya-breadcrumb-button {
+    z-index: 9;
+    height: 31px;
+    min-width: 15px;
+}
+
+.naya-history-button {
+    z-index: 9;
+    height: 31px;
+    // position: fixed;
+}
+
+.naya-search-matters-button {
+    z-index: 9;
+    height: 31px;
+    // position: fixed;
+}
+
+.naya-matter-warning-button {
+    i.pi.pi-exclamation-triangle {
+        font-size: 20px;
+        color: #fbc02d;
+    }
+}
+
+.naya-progress-bar {
+    padding: 10px;
+    margin-top: 35px;
+    background-color: #142689 !important;
+    color: white !important;
+}
+
+.naya-progress-message {
+    margin: -5px 0 8px;
+    padding: 5px;
+}
+
+.naya-breadcrumb-button-div {
+    float: right;
+    margin-top: 3px;
+}
+
+.naya-icon {
+    font-size: large;
+    color: #0d47a1
+}
+.ms-new {
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: -2rem;
+}

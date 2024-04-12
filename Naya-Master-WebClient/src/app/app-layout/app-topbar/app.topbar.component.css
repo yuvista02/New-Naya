@@ -1,0 +1,41 @@
+.naya-logo {
+    margin-left: 3em;
+    height: 2.25rem;
+}
+
+.layout-topbar-logo {
+    cursor: pointer;
+}
+
+.naya-cursor-pointer {
+    cursor: pointer;
+}
+
+.naya-user-connection {
+    margin-right: 10px !important;
+}
+
+.naya-logout {
+    margin-right: -15px !important;
+}
+
+.naya-notification {
+    width: 560px;
+}
+
+.naya-custom-dropdown-li {
+    padding: 13px 0px 0px 0;
+    margin: 0 24px 0 29px;
+}
+
+.naya-topbar-split-icon {
+    font-size: 1.3rem !important;
+}
+
+.naya-signalr-state{
+    position: absolute;
+    left: 4px;
+    bottom: 0px;
+    z-index: 1;
+    opacity: 0.9;
+}

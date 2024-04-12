@@ -1,0 +1,12 @@
+td {
+    cursor: pointer;
+}
+
+.naya-dropdown-icon {
+    font-size: 1.7rem;
+}
+
+.naya-action-column {
+    text-align: right;
+    white-space: nowrap
+}

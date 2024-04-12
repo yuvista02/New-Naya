@@ -1,0 +1,105 @@
+<ng-container>
+    <div *ngIf="root && item.visible !== false">
+        <span class="layout-menuitem-text">{{ item.label }}</span>
+    </div>
+    <a
+        [attr.href]="item.url"
+        (click)="itemClick($event)"
+        [routerLink]="item.routerLink"
+        routerLinkActive="active-menuitem-routerlink"
+        [routerLinkActiveOptions]="{ exact: true }"
+        *ngIf="(!item.routerLink || item.items) && item.visible !== false"
+        (keydown.enter)="itemClick($event)"
+        [attr.target]="item.target"
+        [attr.tabindex]="0"
+        [ngClass]="item.class"
+        (mouseenter)="onMouseEnter()"
+        pRipple
+        [pTooltip]="item.label"
+        [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())"
+        [id]="item.entityID ? (item.entityID + '-' + item.label) : item.label"
+    >
+        <i
+            [ngClass]="item.icon"
+            class="layout-menuitem-icon"
+        ></i>
+        <span class="layout-menuitem-text">{{ item.label }}</span>
+        <span
+            class="p-badge p-component p-badge-no-gutter naya-badge"
+            [ngClass]="item.badgeClass"
+            *ngIf="item.badge && !root"
+        >{{ item.badge }}</span>
+        <i
+            class="pi pi-fw pi-angle-right layout-submenu-toggler"
+            *ngIf="!item.expanded"
+        ></i>
+        <i
+            class="pi pi-fw pi-angle-down layout-submenu-toggler"
+            *ngIf="item.expanded"
+        ></i>
+    </a>
+    <a
+        (click)="itemClick($event)"
+        *ngIf="item.routerLink && !item.items && item.visible !== false"
+        [routerLink]="item.routerLink"
+        routerLinkActive="active-menuitem-routerlink"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [attr.target]="item.target"
+        [attr.tabindex]="0"
+        [ngClass]="item.class"
+        (mouseenter)="onMouseEnter()"
+        pRipple
+        routerLinkActive
+        #rla="routerLinkActive"
+        [ngClass]="{'naya-active-route': rla.isActive }"
+        [pTooltip]="item.label"
+        [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())"
+        [id]="item.entityID ? (item.entityID + '-' + item.label) : item.label"
+    >
+        <i
+            [ngClass]="item.icon"
+            class="layout-menuitem-icon"
+        ></i>
+        <span class="layout-menuitem-text">{{ item.label }}</span>
+        <span
+            [ngClass]="item.badgeClass"
+            class="p-badge p-component p-badge-no-gutter naya-badge"
+            *ngIf="item.badge > 1"
+        >{{item.badge}}</span>
+        <span *ngIf="item.badge == 1"><i class="pi pi-check-circle naya-check-circle"></i></span>
+        <span *ngIf="item.badge == 0"><i class="pi pi-times naya-times-icon"></i></span>
+        <i
+            class="pi pi-fw pi-angle-down layout-submenu-toggler"
+            *ngIf="item.items"
+        ></i>
+    </a>
+    <ul
+        *ngIf="
+            ((item.items && root) ||
+                (item.items && (item.active || item.expanded))) &&
+            item.visible !== false
+        "
+        [@children]="
+            root
+                ? 'visible'
+                : (active || item.expanded)
+                ? 'visibleAnimated'
+                : 'hiddenAnimated'
+        "
+    >
+        <ng-template
+            ngFor
+            let-child
+            let-i="index"
+            [ngForOf]="item.items"
+        >
+            <li
+                app-menuitem
+                [item]="child"
+                [index]="i"
+                [parentKey]="key"
+                [class]="child.badgeClass"
+            ></li>
+        </ng-template>
+    </ul>
+</ng-container>

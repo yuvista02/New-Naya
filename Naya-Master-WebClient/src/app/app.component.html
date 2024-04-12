@@ -1,0 +1,17 @@
+<naya-error-message
+    class="flex justify-content-center"
+    [messages]="NSMessages"
+></naya-error-message>
+
+<naya-dialog></naya-dialog>
+
+<p-confirmDialog
+    header="Confirmation"
+    icon="pi pi-exclamation-triangle"
+    styleClass="w-30rem"
+    acceptButtonStyleClass="p-button-text"
+    rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>
+
+<!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+<router-outlet *ngIf="!NsIsIFrame"></router-outlet>

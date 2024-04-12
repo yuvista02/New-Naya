@@ -1,0 +1,9 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 7:47:51 AM -->
+<naya-loading *ngIf="NSLoading"></naya-loading>
+
+<div class="card naya-card" *ngIf="!NSLoading">
+    <naya-roles-table [NSPageTitle]="NSPageTitle"
+                [NSNayaRoleList]="NSNayaRoleList"
+                [NSLoading]="NSLoading"
+                ></naya-roles-table>
+</div>

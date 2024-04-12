@@ -1,0 +1,30 @@
+h4{
+
+    text-align: center;
+    color: #757575;
+}
+.empty-state-cta{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 75px;
+}
+.empty-state-cta ::ng-deep .p-button:not(:last-child) {
+    margin-right: 30px;
+}
+.empty-state-cta ::ng-deep .p-button:not(.p-button-secondary){
+    height: 5.5rem;
+    width: 5.5rem;
+}
+.empty-state-cta ::ng-deep .p-button-icon {
+    font-size: 30px;
+}
+
+.empty-state-cta ::ng-deep naya-custom-dropdown,
+.empty-state-cta ::ng-deep .btn-more-dropdown,
+.empty-state-cta ::ng-deep .btn-more-dropdown .p-splitbutton > .p-button:last-child{
+    height: 80px;
+    width: 80px;
+}
+.empty-state-cta ::ng-deep .btn-more-dropdown-icon{
+    margin-bottom: -80px;
+}

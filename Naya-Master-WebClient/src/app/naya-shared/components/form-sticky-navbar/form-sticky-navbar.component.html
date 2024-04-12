@@ -1,0 +1,11 @@
+<div class="clearfix"></div>
+<div
+    id="form-sticky-nav"
+    [ngStyle]="{
+        height: this.spacerEl?.scrollHeight + 'px',
+        width: 'calc(' + this.spacerElscrollWidth + 'px)'
+    }"
+>
+    <ng-content></ng-content>
+</div>
+<!-- <div #navbarSpacer id="form-navbar-spacer"></div> -->

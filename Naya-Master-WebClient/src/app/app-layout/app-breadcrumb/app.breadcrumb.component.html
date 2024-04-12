@@ -1,0 +1,17 @@
+<div class="layout-breadcrumb-container ms-new">
+    <p-breadcrumb
+        [model]="items"
+        [home]="home"
+        styleClass="layout-breadcrumb pl-4 py-2"
+    ></p-breadcrumb>
+
+    <div>
+        <button
+            *ngIf="NSDisplayButton()"
+            pButton
+            class="p-button-secondary shadow-1"
+            icon="pi pi-history"
+            (click)="OnClickHistory()"
+        ></button>
+    </div>
+</div>

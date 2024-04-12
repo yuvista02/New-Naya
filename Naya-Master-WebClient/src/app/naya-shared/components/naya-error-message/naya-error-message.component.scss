@@ -1,0 +1,42 @@
+:host ::ng-deep {
+    .p-message-wrapper {
+        align-items: baseline
+    }
+
+    .p-message-icon {
+        width: 2%;
+    }
+
+    .p-message-detail {
+        width: 88%;
+    }
+
+    button.p-message-close {
+        width: 10%;
+        border-radius: 0.2rem;
+        padding: 0 0.2rem;
+
+        &:after {
+            content: 'Close';
+            margin-left: 2px;
+        }
+    }
+}
+
+#form-sticky-nav-message-bar {
+    position: fixed;
+    top: -1rem;
+    z-index: 10000;
+    min-width: calc(100vw - 40rem);
+    max-width: calc(100vw - 20rem);
+}
+
+#form-footer-spacer-message-bar {
+    height: 46px;
+    margin-bottom: -60px;
+}
+
+#nav-tab {
+    position: fixed;
+    z-index: 200;
+}

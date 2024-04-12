@@ -1,0 +1,34 @@
+.naya-inputfield-label {
+    color: #757575;
+}
+
+.naya-inputfield .ui-message {
+    font-size: 13px;
+    border: none;
+    padding-left: 0;
+    color: #e62a10;
+    position: absolute;
+}
+
+.naya-inputfield .grid {
+    align-items: center;
+}
+
+.naya-inputfield p-dropdown {
+    height: 20px;
+    margin-top: -2px;
+}
+
+.naya-inputfield input[readonly] {
+    background: #cacaca;
+    color: #7f7f7f;
+}
+
+.naya-inputfield input[readonly]:focus,
+.naya-inputfield input[readonly]:active {
+    border-bottom-color: #7f7f7f !important;
+}
+
+.naya-inputfield .p-message-error {
+    background: none;
+}

@@ -1,0 +1,77 @@
+.naya-notification-outer-block {
+    max-height: 350px;
+    cursor: default;
+}
+
+.naya-notification-inner-block {
+    padding: 15px;
+    margin-bottom: 2px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.naya-notification-empty {
+    padding: 15px;
+    margin-bottom: 2px;
+    text-align: center;
+    cursor: default;
+}
+
+.naya-notification-clear {
+    text-align: center;
+    cursor: pointer;
+}
+
+.unread {
+    background-color: #f1f7ff;
+}
+
+.naya-notification-timestamp {
+    width: 32px;
+}
+
+.naya-notification-status-icon {
+    text-align: center;
+    width: 40px;
+    margin-top: 2px;
+}
+
+.naya-notification-status-name {
+    width: 75px;
+}
+
+.naya-notification-name {
+    width: 300px;
+    margin-left: 5px;
+}
+
+.naya-notification-button {
+    margin-left: 5px;
+    height: 2em !important;
+    width: 2em !important;
+    margin-top: -6px;
+}
+
+.naya-div-timestamp {
+    width: 55px;
+}
+
+.naya-icon-check {
+    color: #1b9a59;
+}
+
+.naya-icon-clock {
+    color: #ffe004;
+}
+
+.naya-icon-info {
+    color: #256ef5;
+}
+
+.naya-icon-warning {
+    color: #FBC02D;
+}
+
+.naya-icon-times {
+    color: #c9302c;
+}

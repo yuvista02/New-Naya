@@ -1,0 +1,7 @@
+label.label {
+    color: #757575;
+}
+
+::ng-deep p {
+    margin-top: 5px;
+}

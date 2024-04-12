@@ -1,0 +1,12 @@
+{
+    "msal": {
+        "clientID": "f3ee230e-10f4-4c48-a15a-febaf0e7ea53",
+        "authority": "https://login.microsoftonline.com/04f57c82-713c-494b-8ae3-b4c3654da6dd",
+        "scope": ["api://4ffb0ead-f735-40f5-aa4b-80c80dcfc8db/access_as_user"],
+        "redirectUri": "/"
+    },
+    "naya": {
+        "apiUrl": "https://localhost:44317"
+    },
+    "appInsightsInstrumentationKey": "20759392-7cde-48f7-96b4-eae8da892e77"
+}

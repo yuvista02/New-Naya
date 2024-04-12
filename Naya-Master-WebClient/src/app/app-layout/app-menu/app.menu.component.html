@@ -1,0 +1,13 @@
+<ul class="layout-menu">
+    <ng-container *ngIf="NSShowPagesRoute">
+        <ng-container *ngIf="NSMenuItems">
+            <li
+                app-menuitem
+                *ngFor="let item of NSMenuItems; let i = index"
+                [item]="item"
+                [index]="i"
+                [root]="true"
+            ></li>
+        </ng-container>
+    </ng-container>
+</ul>

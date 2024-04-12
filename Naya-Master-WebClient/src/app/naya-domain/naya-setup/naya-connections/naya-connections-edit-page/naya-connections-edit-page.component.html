@@ -1,0 +1,12 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 11:11:11 AM -->
+<naya-edit-page [NSLoading]="NSLoading"
+                [NSPageTitle]="NSPageTitle"
+                [NSDisplayRemoveButton]="NSDisplayRemoveButton"
+                (NSOnClickEventRemove)="OnClickRemove()">
+    <ng-container *ngIf="!NSLoading">
+        <naya-connections-form #NSForm
+                       [NSUserConnectionID]="NSUserConnectionID"
+                       [NSUserConnectionGet]="NSUserConnectionGet">
+        </naya-connections-form>
+    </ng-container>
+</naya-edit-page>

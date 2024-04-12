@@ -1,0 +1,33 @@
+.naya-check-circle {
+    font-size: 15px !important;
+    color: green !important;
+    position: absolute;
+    right: 0.7em !important;
+    top: 18px;
+    line-height: 0.2em;
+    transform: none !important;
+}
+.naya-times-icon {
+    font-size: 15px !important;
+    color: red !important;
+    position: absolute;
+    right: 0.7em !important;
+    top: 18px;
+    line-height: 0.2em;
+    -webkit-transform: none !important;
+    transform: none !important;
+}
+
+// .naya-active-route {
+//     background-color:#e8eaf6 !important;
+//     color: #3f51b5 !important;
+// }
+
+.naya-badge {
+    background: #038103;
+}
+
+.layout-menuitem-text{
+    word-break: break-word; 
+    width: 140px;
+}

@@ -1,0 +1,59 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 11:11:15 AM -->
+<naya-table-page [NSPageTitle]="NSPageTitle"
+                 [NSItemList]="NSUserConnectionList"
+                 [NSDisplayCreateButton]="NSDisplayCreate"
+                 [NSDisplayFindButton]="NSDisplayFind"
+                 (NSEventOnClickCreate)="OnClickCreate()"
+                 (NSEventOnClickFind)="OnClickFind()">
+    <p-table #NSTable
+             [columns]="NSTableColumns"
+             [rowHover]="true"
+             [value]="NSUserConnectionList"
+             selectionMode="single"
+             [loading]="NSLoading"
+             styleClass="p-datatable-gridlines p-datatable-striped">
+        <ng-template pTemplate="caption">
+            <naya-table-header [NSPageTitle]="NSPageTitle"
+                               [NSEnableSearch]="NSEnableSearch"
+                               [NSDisplayCreateButton]="NSDisplayCreate"
+                               [NSDisplayFindButton]="NSDisplayFind"
+                               (NSEventOnClickCreate)="OnClickCreate()"
+                               (NSEventOnClickFind)="OnClickFind()"
+                               (NSEventOnSearchInput)="OnSearchInput(NSTable, $event)">
+            </naya-table-header>
+        </ng-template>
+
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns"
+                    [class]="col.class"
+                    [ngClass]="{ 'actions-column': col.field === 'actions' }">
+                    {{ col.header }}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns"
+                    [class]="col.class"
+                    [ngClass]="{
+                    'actions-column': col.field === 'actions',
+                    clickable: col.field !== 'actions'
+                }"
+                    (click)="col.field === 'actions' || OnClickItem(rowData)">
+                    <div [ngSwitch]="col.field">
+                        <div *ngSwitchCase="'actions'"
+                             class="text-right">
+
+                            <naya-custom-dropdown [model]="rowData.actions">
+                                <i class="pi pi-ellipsis-v"></i>
+                            </naya-custom-dropdown>
+                        </div>
+                        <span *ngSwitchDefault>{{ rowData[col.field] }}</span>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</naya-table-page>
+

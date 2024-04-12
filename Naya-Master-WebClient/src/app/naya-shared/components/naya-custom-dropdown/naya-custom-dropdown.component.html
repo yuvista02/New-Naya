@@ -1,0 +1,13 @@
+<div
+    class="btn-more-dropdown-icon naya-cursor-pointer"
+    (click)="OnClickIcon(menu, $event)"
+>
+    <ng-content></ng-content>
+</div>
+<p-tieredMenu
+    #menu
+    class="w-max"
+    [model]="model"
+    [popup]="true"
+    appendTo="body"
+></p-tieredMenu>

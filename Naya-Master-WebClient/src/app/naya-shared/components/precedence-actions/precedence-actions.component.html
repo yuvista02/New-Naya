@@ -1,0 +1,21 @@
+<div class="text-left precedence-actions">
+    <span
+        class="btn-more-dropdown-icon precedence-button-up"
+        [ngClass]="{ disabled: item.position?.indexOf('first') !== -1 }"
+        (click)="item.precedenceActions.up()"
+        pTooltip="Move Up"
+        tooltipPosition="bottom"
+    >
+        <i class="pi pi-caret-up naya-precedence-font-size"></i>
+    </span>
+
+    <span
+        class="btn-more-dropdown-icon precedence-button-down"
+        [ngClass]="{ disabled: item.position?.indexOf('last') !== -1 }"
+        (click)="item.precedenceActions.down()"
+        pTooltip="Move Down"
+        tooltipPosition="bottom"
+    >
+        <i class="pi pi-caret-down naya-precedence-font-size"></i>
+    </span>
+</div>

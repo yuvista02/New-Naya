@@ -1,0 +1,15 @@
+<naya-form-control
+    [NSLabel]="field.label"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <input
+            type="text"
+            nayaCurrencyMask
+            [formControlName]="field.name"
+            [type]="'number'"
+            pInputText
+        />
+    </div>
+</naya-form-control>

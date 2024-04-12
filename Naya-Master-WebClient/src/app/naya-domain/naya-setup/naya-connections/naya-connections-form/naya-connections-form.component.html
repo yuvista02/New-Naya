@@ -1,0 +1,110 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 11:11:11 AM -->
+<naya-form-page
+    [NSParentForm]="NSParentForm"
+    [NSIsFormSaving]="NSIsFormSubmitting"
+    (NSOnClickEventSubmit)="OnClickSubmit()"
+    (NSOnClickEventCancel)="OnClickCancel()"
+>
+    <div [formGroup]="NSParentForm">
+        <!-- Form PlaceHolder - DO NOT REMOVE -->
+        <naya-form-control
+            [NSLabel]="'Connection Name'"
+            [NSFormControl]="NSParentForm.controls.connectionName"
+        >
+            <input
+                type="number"
+                formControlName="connectionName"
+                pInputText
+            />
+        </naya-form-control>
+        
+        <naya-form-control
+            [NSLabel]="'Data URL'"
+            [NSFormControl]="NSParentForm.controls.dataURL"
+        >
+            <input
+                type="text"
+                formControlName="dataURL"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Web App URL'"
+            [NSFormControl]="NSParentForm.controls.webAppURL"
+        >
+            <input
+                type="text"
+                formControlName="webAppURL"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Draft Assistant Web App URL'"
+            [NSFormControl]="NSParentForm.controls.aiWebAppURL"
+        >
+            <input
+                type="text"
+                formControlName="aiWebAppURL"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Product Name'"
+            [NSFormControl]="NSParentForm.controls.productName"
+        >
+            <input
+                type="text"
+                formControlName="productName"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Client Environment'"
+            [NSFormControl]="NSParentForm.controls.clientEnvironment"
+        >
+            <input
+                type="text"
+                formControlName="clientEnvironment"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Test Environment'"
+            [NSFormControl]="NSParentForm.controls.testEnvironment"
+        >
+            <input
+                type="text"
+                formControlName="testEnvironment"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Naya Environment'"
+            [NSFormControl]="NSParentForm.controls.nayaEnvironment"
+        >
+            <input
+                type="text"
+                formControlName="nayaEnvironment"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'Enable Combined'"
+            [NSFormControl]="NSParentForm.controls.enableCombined"
+        >
+            <input
+                type="text"
+                formControlName="enableCombined"
+                pInputText
+            />
+        </naya-form-control>
+
+    </div>
+</naya-form-page>

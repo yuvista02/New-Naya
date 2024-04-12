@@ -1,0 +1,12 @@
+{
+    "msal": {
+        "clientID": "c054f438-5be2-4d46-84e7-0c57570255eb",
+        "authority": "https://login.microsoftonline.com/b3649882-262c-4bdf-9be2-6da57439ae28",
+        "scope": ["api://45f5e1fb-ad9e-4413-bae5-1950bdff5e2b/access_as_user"],
+        "redirectUri": "https://naya.z20.web.core.windows.net"
+    },
+    "naya": {
+        "apiUrl": "https://nayaapi.azurewebsites.net"
+    },
+    "appInsightsInstrumentationKey": "0de95053-65ae-42b9-90b2-87da893ef8cb"
+}

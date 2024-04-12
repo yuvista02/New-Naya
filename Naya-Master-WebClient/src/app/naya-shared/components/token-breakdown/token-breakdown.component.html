@@ -1,0 +1,45 @@
+<div class="naya-token-breakdown">
+    <div class="mb-1">
+        <label
+            for="token-usage"
+            class="mr-2"
+        >
+            <i
+                class="pi pi-info-circle"
+                pTooltip="Show token breakdown"
+                (click)="tokenBreakdownOverlay.toggle($event)"
+            ></i>
+            Token progress indicator
+        </label>
+        <span id="token-usage">
+            {{NSTokenBreakdown.used}}/{{NSTokenBreakdown.limit}}
+        </span>
+    </div>
+    <div>
+        <p-progressBar
+            styleClass="h-1px"
+            [showValue]="false"
+            [value]="(NSTokenBreakdown.used/NSTokenBreakdown.limit)*100"
+        ></p-progressBar>
+    </div>
+</div>
+
+<p-overlayPanel #tokenBreakdownOverlay>
+    <ng-template pTemplate="content">
+        <div class="text-left">
+            <h1 class="text-lg">Token Breakdown</h1>
+            <p class="line-height-1 text-color-secondary">
+                Prompt: {{NSTokenBreakdown.promptTokens}}
+            </p>
+            <p class="line-height-1 text-color-secondary">
+                Input: {{NSTokenBreakdown.inputTokens}}
+            </p>
+            <p class="line-height-1 text-color-secondary">
+                Max Output: {{NSTokenBreakdown.maxOutputTokens}}
+            </p>
+            <p class="line-height-1 text-color-secondary">
+                Limit: {{NSTokenBreakdown.limit}}
+            </p>
+        </div>
+    </ng-template>
+</p-overlayPanel>

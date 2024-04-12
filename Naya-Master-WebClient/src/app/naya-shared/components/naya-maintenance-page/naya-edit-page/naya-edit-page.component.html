@@ -1,0 +1,62 @@
+<naya-loading *ngIf="NSLoading"></naya-loading>
+<div class="naya-card">
+    <div class="card" *ngIf="!NSLoading">
+        <div class="naya-card-edit">
+            <div class="grid naya-header">
+                <div class="col-8">
+                    <div class="grid">        
+                        <button *ngIf="NSDisplayRouteBackButton"
+                            pButton
+                            pRipple
+                            type="button"
+                            icon="pi pi-arrow-left"
+                            (click)="OnClickRouteBack()"
+                            class="p-button-rounded p-button-text mr-2 mb-2"
+                            pTooltip="Go Back"
+                            tooltipPosition="bottom"
+                        ></button>              
+                        <h5>{{ NSPageTitle }}</h5>
+                    </div>
+                </div>
+                <div class="col-4 naya-button">
+                    <button
+                        *ngIf="NSDisplayRemoveButton"
+                        (click)="NSOnRemoveClick()"
+                        type="button"
+                        pTooltip="Remove"
+                        tooltipPosition="left"
+                        class="
+                            p-button-secondary
+                            p-button-raised
+                            p-button-rounded
+                            mr-2
+                            mb-2
+                        "
+                        pButton
+                        icon="pi pi-trash"
+                    ></button>
+                    <button
+                        *ngIf="NSDisplaySecondaryButton"
+                        (click)="NSOnSecondaryButtonClick()"
+                        type="button"
+                        pTooltip="{{NSSecondaryButtonToolTip}}"
+                        tooltipPosition="left"
+                        class="
+                            p-button-secondary
+                            p-button-raised
+                            p-button-rounded
+                            mr-2
+                            mb-2
+                        "
+                        pButton
+                        icon="{{NSSecondaryButtonIcon}}"
+                    ></button>
+                </div>
+            </div>
+            <ng-content></ng-content>
+        </div>
+    </div>
+    
+</div>
+
+<div class="clearfix"></div>

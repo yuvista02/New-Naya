@@ -1,0 +1,73 @@
+<div class="naya-inputfield grid align-items-center">
+    <!-- LABEL -->
+    <div
+        *ngIf="NSDisplayLabel"
+        class="col-12 md:col-{{ NSLabelSize || 2 }} md:text-right"
+    >
+        <label [for]="NSLabel">
+            {{ NSIsRequired || NSHasRequiredValidator ? "*" : "" }} {{ NSLabel }}
+            <ng-container *ngIf="NSSecondLabel">
+                <span class="text-color-secondary">{{ NSSecondLabel }}</span>
+            </ng-container>
+            <span
+                *ngIf="NSHint"
+                [pTooltip]="NSHint"
+                tooltipPosition="bottom"
+            >
+                <i class="pi pi-info-circle"></i></span>
+
+        </label>
+    </div>
+    <!-- INPUT FIELD -->
+    <div class="col-12 md:col-{{ NSInputSize || 4 }}">
+        <ng-content></ng-content>
+    </div>
+    <!-- MESSAGE -->
+    <div
+        class="col-12 md:col-{{ 12 - (NSInputSize || 4) - (NSLabelSize || 2) }}"
+        [class]="NSErrorMessageStyleClass"
+        *ngIf="NSDisplayErrMsg && NSFormControl && NSFormControl.invalid && (NSFormControl.dirty ||
+        NSFormControl.touched || NSFormControl.root?.submitting)"
+    >
+        <div class="p-message p-message-error">
+            <div *ngIf="NSFormControl.errors?.required">
+                {{ NSLabel || NSFormControl }} is required.
+            </div>
+            <div *ngIf="NSFormControl.errors?.list">
+                Select item from the list.
+            </div>
+            <div *ngIf="NSFormControl.errors?.email">
+                {{ NSLabel || NSFormControl }} has invalid format.
+            </div>
+            <div *ngIf="NSFormControl.errors?.pattern">
+                {{ NSLabel || NSFormControl }} has invalid characters.
+            </div>
+            <div *ngIf="NSFormControl.errors?.JSONValidation">
+                {{ NSLabel || NSFormControl }} has invalid JSON input.
+            </div>
+            <div *ngIf="NSFormControl.errors?.min">
+                {{ NSLabel || NSFormControl }} is less than {{ validators().min?.min }}.
+            </div>
+            <div *ngIf="NSFormControl.errors?.max">
+                {{ NSLabel || NSFormControl }} is greater than {{ validators().max?.max }}.
+            </div>
+            <div *ngIf="NSFormControl.errors?.maxlength">
+                {{ NSLabel || NSFormControl }} must be less than
+                {{ validators().maxlength?.requiredLength }} characters
+                long.
+            </div>
+            <div *ngIf="NSFormControl.errors?.serverError">
+                {{ NSFormControl.errors?.serverError }}
+            </div>
+            <div *ngIf="NSFormControl.errors?.hasEmptyContent">
+                File content cannot be empty.
+            </div>
+            <div *ngIf="NSFormControl.errors?.invalidFileType">
+                Invalid File Type.
+            </div>
+            <div *ngIf="NSFormControl.errors?.invalidData">
+                {{NSFormControl.errors?.invalidData ?? 'Invalid Data.'}}
+            </div>
+        </div>
+    </div>
+</div>

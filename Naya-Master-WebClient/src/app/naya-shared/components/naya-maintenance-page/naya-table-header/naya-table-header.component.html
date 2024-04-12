@@ -1,0 +1,83 @@
+<div
+    class="flex flex-column md:flex-row md:justify-content-between align-items-baseline table-header naya-table-header">
+    <div class="grid">
+        <button
+            *ngIf="NSDisplayRouteBackButton"
+            pButton
+            pRipple
+            type="button"
+            icon="pi pi-arrow-left"
+            (click)="OnClickRouteBack()"
+            class="p-button-rounded p-button-text m-0"
+            pTooltip="Go Back"
+            tooltipPosition="bottom"
+        ></button>
+        <h1 class="text-xl m-2 align-self-center">{{ NSPageTitle }}</h1>
+    </div>
+    <div class="naya-button flex gap-2">
+        <ng-container *ngTemplateOutlet="NSFilterTemplate"></ng-container>
+
+        <span
+            *ngIf="NSEnableSearch"
+            class="p-input-icon-left naya-search"
+        >
+            <i class="pi pi-search"></i>
+            <input
+                #textInput
+                pInputText
+                type="text"
+                (input)="OnSearchInput(textInput.value)"
+                placeholder="Search"
+            />
+        </span>
+        <button
+            pButton
+            *ngIf="NSDisplayCreateButton"
+            (click)="OnClickCreate()"
+            type="button"
+            icon="pi pi-plus"
+            class="p-button-rounded p-button-raised m-0"
+            pTooltip="Create New {{ NSPageTitle }}"
+            tooltipPosition="left"
+        ></button>
+
+        <button
+            pButton
+            *ngIf="NSDisplayFindButton"
+            (click)="OnClickFind()"
+            type="button"
+            icon="pi pi-search"
+            class="p-button-rounded p-button-raised m-0"
+            pTooltip="Find {{ NSPageTitle }}"
+            tooltipPosition="left"
+        ></button>
+
+        <button
+            pButton
+            *ngIf="NSDisplaySecondaryButton"
+            (click)="OnClickSecondary()"
+            type="button"
+            icon="{{ NSSecondaryButtonIcon }}"
+            class="p-button-rounded p-button-raised m-0"
+            pTooltip="{{ NSSecondaryButtonToolTip }}"
+            tooltipPosition="left"
+        ></button>
+
+        <p-fileUpload
+            *ngIf="NSDisplayUploadButton"
+            class="m-0 inline-block"
+            styleClass="border-circle p-button-raised"
+            #NSFileUpload
+            mode="basic"
+            [accept]="NSAcceptedFileExtension"
+            [maxFileSize]="1000000"
+            [auto]="true"
+            (uploadHandler)="OnUploadFile($event)"
+            [customUpload]="true"
+            chooseIcon="pi pi-upload"
+            pTooltip="Import {{NSPageTitle}}"
+            tooltipPosition="left"
+        ></p-fileUpload>
+        <ng-container *ngTemplateOutlet="NSButtonTemplate"></ng-container>
+    </div>
+</div>

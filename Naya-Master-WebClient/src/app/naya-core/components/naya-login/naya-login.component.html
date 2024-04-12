@@ -1,0 +1,55 @@
+<div class="pages-body login-page flex flex-column">
+    <div class="align-self-center mt-auto mb-auto login-card">
+        <div class="pages-panel card flex flex-column login-card-inner">
+            <div class="pages-header px-3 py-1">
+                <h2>NAYA</h2>
+            </div>
+
+            <h4>Welcome</h4>
+
+            <div class="pages-detail mb-2 px-6" *ngIf="!NSHasErrors">
+                {{ NSDisplayMessage }}
+            </div>
+            <div
+                class="pages-detail mb-2 px-6 naya-error-message"
+                *ngIf="NSHasErrors"
+            >
+                {{ NSDisplayMessage}}
+            </div>
+
+            <p-progressBar
+                mode="indeterminate"
+                *ngIf="NSLoading"
+                [style]="{ height: '6px' }"
+            ></p-progressBar>
+            <p-button
+                class="login-button mb-2 px-3 login-button"
+                *ngIf="!NSLoading && !NSHasErrors"
+                (click)="NSOnClickLoginButton()"
+                label="LOGIN"
+            ></p-button>
+            <p-button
+                class="login-button mb-2 px-3 login-button"
+                *ngIf="!NSLoading && NSHasErrors"
+                (click)="NSOnClickReloadButton()"
+                label="RELOAD"
+            ></p-button>
+            <div
+                class="pages-detail mb-2 px-3"
+                [ngStyle]="{
+                    'margin-top': NSLoading ? '35px' : '0px'
+                }"
+            >
+                <hr />
+                <p>
+                    <span>
+                        Powered by: {{ NSDiagnostic.apiName }} | Version:
+                        {{ NSDiagnostic.apiVersion }}<br />
+                    </span>
+                    <span> Connected To: {{ NSDiagnostic.databaseName }} </span>
+                </p>
+                <p>Application Version: {{ NSWebApplicationVersion }}</p>
+            </div>
+        </div>
+    </div>
+</div>

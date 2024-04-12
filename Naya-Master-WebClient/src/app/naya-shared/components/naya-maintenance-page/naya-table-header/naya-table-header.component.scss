@@ -1,0 +1,19 @@
+:host ::ng-deep .p-fileupload {
+    .p-fileupload-choose {
+        height: 2.75rem;
+        width: 2.75rem;
+        margin-right: 0;
+    }
+
+    .p-messages {
+        position: absolute;
+        top: 5rem;
+        right: 12rem;
+    }
+}
+
+.naya-table-header {
+    h5 {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="clearfix"></div>
+<div
+    id="form-footer-block"
+    class="form-group btn-row"
+    [ngStyle]="{
+        height: 'calc(' + this.spacerElscrollHeight + 'px + 4px)',
+        width: 'calc(' + this.spacerElscrollWidth + 'px + 3em)'
+    }"
+>
+    {{ footerElTop }}
+    <div class="progress-bar" *ngIf="DisplayProgressBar">
+        Please wait...
+        <p-progressBar mode="indeterminate"></p-progressBar>
+    </div>
+    <ng-content></ng-content>
+</div>
+<div
+    #footerSpacer
+    id="form-footer-spacer"
+    [ngClass]="{ 'progress-footer-spacer': DisplayProgressBar }"
+></div>

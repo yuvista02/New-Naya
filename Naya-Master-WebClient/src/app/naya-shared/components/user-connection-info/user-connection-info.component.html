@@ -1,0 +1,22 @@
+<li id="visible">
+    {{LoggedUserFullName}}
+    <ul id="hidden">
+        <li id="details">
+            <b>Azure</b><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{LoggedUserFullName}} <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{LoggedUserName}}<br /><br />
+
+            <b>Naya Web Service</b><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; API: {{NSWebApiName}}<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: {{NSWebApiVersion}} <br /><br />
+
+            <b>Naya Database</b><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Database: {{NSDatabaseName}}<br />
+            <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username: {{nayaConnectionDetail?.userName}}<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Connected At: {{nayaConnectionDetail?.connectedAt | nayaDateTimeFormat}}<br /><br /> -->
+
+            <b>Naya Web Application</b><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: {{getWebApplicationVersion()}}<br />
+        </li>
+    </ul>
+</li>

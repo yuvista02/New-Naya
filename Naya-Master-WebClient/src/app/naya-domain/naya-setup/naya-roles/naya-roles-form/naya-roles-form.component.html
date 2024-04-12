@@ -1,0 +1,31 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 10:06:44 AM -->
+<naya-form-page [NSParentForm]="NSParentForm"
+                [NSIsFormSaving]="NSIsFormSubmitting"
+                (NSOnClickEventSubmit)="OnClickSubmit()"
+                (NSOnClickEventCancel)="OnClickCancel()">
+    <div [formGroup]="NSParentForm">
+        <!-- Form PlaceHolder - DO NOT REMOVE -->
+        <naya-form-control
+            [NSLabel]="'Role Name'"
+            [NSFormControl]="NSParentForm.controls.roleName"
+        >
+            <input
+                type="text"
+                formControlName="roleName"
+                pInputText
+            />
+        </naya-form-control>
+
+        <naya-form-control
+            [NSLabel]="'External Role ID'"
+            [NSFormControl]="NSParentForm.controls.externalRoleID"
+        >
+            <input
+                type="text"
+                formControlName="externalRoleID"
+                pInputText
+            />
+        </naya-form-control>
+
+    </div>
+</naya-form-page>

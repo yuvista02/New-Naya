@@ -1,0 +1,25 @@
+<form [formGroup]="NSParentForm" (ngSubmit)="OnClickSubmit()">
+    <div class="p-fluid p-formgrid">
+        <ng-content></ng-content>
+    </div>
+    <naya-form-sticky-footer *ngIf="NSDisplaySaveButton">
+        <button
+            type="submit"
+            pButton
+            pRipple
+            label="Save"
+            class="p-button-raised mr-2 mb-2"
+            *ngIf="NSParentForm?.dirty"
+            [disabled]="NSIsFormSaving"
+        ></button>
+        <button
+            pButton
+            pRipple
+            type="button"
+            label="Cancel"
+            [disabled]="NSIsFormSaving"
+            class="p-button-raised p-button-secondary mr-2 mb-2"
+            (click)="OnClickCancel()"
+        ></button>
+    </naya-form-sticky-footer>
+</form>

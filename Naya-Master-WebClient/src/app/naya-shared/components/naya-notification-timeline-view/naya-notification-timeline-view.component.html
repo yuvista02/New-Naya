@@ -1,0 +1,41 @@
+<div [ngClass]="{'naya-div-timeline': NSHasMultipleData()}">
+    <p-timeline [value]="NSModifiedFieldList" align="left">
+        <ng-template pTemplate="marker" let-notification>
+            <span
+                class="shadow-2 naya-timeline-icon"
+                [style.backgroundColor]="'#fbc02d'"
+            >
+                <i
+                    [ngClass]="'pi pi-pencil'"
+                    class="naya-icon"
+                    pTooltip="Updated"
+                    tooltipPosition="bottom"
+                ></i>
+            </span>
+        </ng-template>
+        <ng-template pTemplate="content" let-notification>
+            <p-card>
+                <div class="naya-timeline-card-body">
+                    <h6 class="naya-card-header">
+                        {{ NSGetPropertyName(notification.PropertyName) }}
+                    </h6>
+                    <span>
+                        Updated from
+                        <b>
+                            <span>
+                                {{ notification.OriginalValue ?? NSNoValue }}
+                            </span>
+                        </b>
+                        to
+                        <b>{{ notification.ModifiedValue ?? NSNoValue }}</b>
+                        <br />
+                        By {{ NSModifiedBy }}
+                        <br />
+                        {{ NSGetEntity() }}
+                    </span>
+                </div>
+            </p-card>
+            <br />
+        </ng-template>
+    </p-timeline>
+</div>

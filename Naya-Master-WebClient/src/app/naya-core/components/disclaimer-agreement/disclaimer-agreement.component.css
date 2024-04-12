@@ -1,0 +1,16 @@
+.naya-disclaimer-message {
+    white-space: pre-wrap;
+    height: 50vh;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 0px 10px 0px 0;
+}
+
+.naya-disclaimer-header {
+    text-align: center;
+    line-height: initial;
+}
+
+.naya-disclaimer-footer {
+    text-align: center;
+}

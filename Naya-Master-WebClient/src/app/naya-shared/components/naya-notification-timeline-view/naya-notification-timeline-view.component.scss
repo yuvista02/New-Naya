@@ -1,0 +1,25 @@
+.naya-timeline-icon {
+    border-radius: 50%;
+    border: 1px solid grey;
+    border-radius: 50%;
+    padding: 0.4em 0.5em;
+}
+
+.naya-icon {
+    color: white;
+}
+
+.naya-timeline-card-body {
+    margin: -15px 0 -15px 0;
+}
+
+.naya-card-header {
+    margin-bottom: 5px;
+}
+
+.naya-div-timeline {
+    margin-top: 10px;
+    height: calc(60vh);
+    width: calc(60vh);
+    overflow-y: scroll;
+}

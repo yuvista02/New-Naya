@@ -1,0 +1,25 @@
+<naya-form-control
+    [NSLabel]="field.label"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <input
+            *ngIf="field.length <= 100"
+            pInputText
+            type="text"
+            class="form-control"
+            [id]="field.name"
+            [name]="field.name"
+            [formControlName]="field.name"
+        >
+        <textarea
+            *ngIf="field.length > 100"
+            [formControlName]="field.name"
+            [id]="field.name"
+            rows="5"
+            pInputTextarea
+            class="form-control"
+        ></textarea>
+    </div>
+</naya-form-control>

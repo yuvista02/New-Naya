@@ -1,0 +1,9 @@
+<!-- Naya Auto Generated (1.6.0) at 4/10/2024 11:11:15 AM -->
+<naya-loading *ngIf="NSLoading"></naya-loading>
+
+<div class="card naya-card" *ngIf="!NSLoading">
+    <naya-connections-table [NSPageTitle]="NSPageTitle"
+                [NSUserConnectionList]="NSUserConnectionList"
+                [NSLoading]="NSLoading"
+                ></naya-connections-table>
+</div>

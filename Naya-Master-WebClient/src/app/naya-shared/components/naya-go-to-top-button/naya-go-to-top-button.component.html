@@ -1,0 +1,13 @@
+<div
+    *ngIf="NSShowBackToTopButton"
+    id="go-to-top-wrapper"
+>
+    <button
+        pButton
+        pRipple
+        (click)="NSScrollToTop()"
+        icon="pi pi-arrow-up"
+        label="Go to Top"
+        id="go-to-top-button"
+    ></button>
+</div>

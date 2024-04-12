@@ -1,0 +1,16 @@
+<naya-form-control
+    [NSLabel]="field.label + ' (%)'"
+    [NSHint]="field.tooltip"
+    [NSFormControl]="form.controls[field.name]"
+>
+    <div [formGroup]="form">
+        <input
+            type="number"
+            min="0"
+            max="100"
+            step="1"
+            [formControlName]="field.name"
+            pInputText
+        >
+    </div>
+</naya-form-control>
