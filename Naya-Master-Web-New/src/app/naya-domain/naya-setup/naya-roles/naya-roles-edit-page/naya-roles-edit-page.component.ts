@@ -7,11 +7,11 @@ import { ActivatedRoute }               from '@angular/router';
 import { AppBreadcrumbService }         from '@app/app-layout/services/app.breadcrumb.service';
 import { ApiContentResult, ApiResult }  from '@naya-core/models/api-result';
 import { ComponentUtilityService }      from '@naya-core/services/component-utility.service';
-import { NayaRoleGet }                      from '@naya-domain/api/response/naya-roles-get.response';
-import { NayaRoleController }               from '@naya-domain/api/naya-roles.controller';
+import { NayaRoleGet }                  from '@naya-domain/api/response/naya-roles-get.response';
+import { NayaRoleController }           from '@naya-domain/api/naya-roles.controller';
 import { DomainRouter }                 from "@naya-domain/domain.router";
-import { NayaRoleFormComponent }            from '@naya-domain/naya-setup/naya-roles/naya-roles-form/naya-roles-form.component';
-import { NayaRoleTableComponent }           from '@naya-domain/naya-setup/naya-roles/naya-roles-table/naya-roles-table.component';
+import { NayaRoleFormComponent }        from '@naya-domain/naya-setup/naya-roles/naya-roles-form/naya-roles-form.component';
+import { NayaRoleTableComponent }       from '@naya-domain/naya-setup/naya-roles/naya-roles-table/naya-roles-table.component';
 import { NayaLoadingComponent }         from '@naya-shared/components/naya-loading/naya-loading.component';
 import { NayaEditPageComponent }        from '@naya-shared/components/naya-maintenance-page/naya-edit-page/naya-edit-page.component';
 import { ConstantString }               from '@naya-shared/constants/constant-string';
@@ -31,7 +31,7 @@ export class NayaRoleEditPageComponent implements OnInit {
   public NSNayaRoleID: number | null = null;
   public NSNayaRoleGet!: NayaRoleGet;
   public NSLoading = true;
-  public NSPageTitle = ConstantString.NayaRoles;
+  public NSPageTitle = ConstantString.NayaRoles.getDisplayName();
   public NSEnvironmentName = String.empty;
 
   @ViewChild("NSForm") NSForm!: ElementRef;

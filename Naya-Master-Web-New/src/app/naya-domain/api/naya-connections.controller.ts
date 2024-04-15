@@ -1,14 +1,14 @@
 // Naya Auto Generated (1.6.0) at 4/10/2024 11:11:15 AM
-import { Injectable } from "@angular/core";
+import { Injectable }                   from "@angular/core";
 // NS Imports
 import {
   ApiContentResult,
   ApiResult
-} from '@naya-core/models/api-result';
-import { NayaApiClient } from '@naya-core/services/naya-api.client';
-import { UserConnection } from "@naya-domain/api/request/naya-connections.request";
-import { UserConnectionGet } from "@naya-domain/api/response/naya-connections-get.response";
-import { ConstantString } from "@naya-shared/constants/constant-string";
+}                                       from '@naya-core/models/api-result';
+import { NayaApiClient }                from '@naya-core/services/naya-api.client';
+import { UserConnection }               from "@naya-domain/api/request/naya-connections.request";
+import { UserConnectionGet }            from "@naya-domain/api/response/naya-connections-get.response";
+import { ConstantString }               from "@naya-shared/constants/constant-string";
 
 @Injectable()
 export class UserConnectionController {

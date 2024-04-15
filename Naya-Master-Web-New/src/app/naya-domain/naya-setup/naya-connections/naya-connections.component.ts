@@ -29,7 +29,7 @@ export class UserConnectionComponent implements OnInit {
   public NSUserConnectionList: UserConnectionFind[] = [];
   public NSLoading: boolean = true;
 
-  public NSPageTitle: string = ConstantString.NayaConnections;
+  public NSPageTitle: string = ConstantString.NayaConnections.getDisplayName();
   public NSEnvironmentName = String.empty;
 
   constructor(

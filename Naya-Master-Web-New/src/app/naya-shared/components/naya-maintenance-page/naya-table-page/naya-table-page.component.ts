@@ -32,7 +32,7 @@ export class NayaTablePageComponent {
     @Input() public NSDisplaySecondaryButton: boolean = false;
     @Input() public NSSecondaryButtonIcon: string = String.empty;
     @Input() public NSSecondaryButtonToolTip: string = String.empty;
-    @Input() public MSNumberOfFilteredTableRows: number = 0;
+    @Input() public NSNumberOfFilteredTableRows: number = 0;
 
     @Output() public MSEventOnClickRouteBack = new EventEmitter();
     @Output() public MSEventOnClickCreate = new EventEmitter();
@@ -50,13 +50,12 @@ export class NayaTablePageComponent {
     }
 
     public get NSItemCount(): string {
-        let count;
+        let count: number = 0;
         
-        if (this.MSNumberOfFilteredTableRows || this.MSNumberOfFilteredTableRows == 0) {
-            count = this.MSNumberOfFilteredTableRows;
-        }
-        else {
-            count= this.NSItemList ? this.NSItemList.length : 0;
+        if (this.NSNumberOfFilteredTableRows || this.NSNumberOfFilteredTableRows == 0) {
+            count = this.NSNumberOfFilteredTableRows;
+        } else {
+            count = this.NSItemList ? this.NSItemList.length : 0;
         }
         
         return `Number of Items: ${count}`;

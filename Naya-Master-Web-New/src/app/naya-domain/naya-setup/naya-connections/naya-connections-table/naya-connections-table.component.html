@@ -3,6 +3,7 @@
                  [NSItemList]="NSUserConnectionList"
                  [NSDisplayCreateButton]="NSDisplayCreate"
                  [NSDisplayFindButton]="NSDisplayFind"
+                 [NSNumberOfFilteredTableRows]="NSNumberOfFilteredTableRows"
                  (NSEventOnClickCreate)="OnClickCreate()"
                  (NSEventOnClickFind)="OnClickFind()">
     <p-table #NSTable
@@ -11,7 +12,10 @@
              [value]="NSUserConnectionList"
              selectionMode="single"
              [loading]="NSLoading"
-             styleClass="p-datatable-gridlines p-datatable-striped">
+             (onFilter)="OnFilter($event)"
+             styleClass="p-datatable-gridlines p-datatable-striped"
+             [scrollable]="true"
+             [scrollHeight]="NSScrollHeight">
         <ng-template pTemplate="caption">
             <naya-table-header [NSPageTitle]="NSPageTitle"
                                [NSEnableSearch]="NSEnableSearch"
@@ -27,8 +31,10 @@
             <tr>
                 <th *ngFor="let col of columns"
                     [class]="col.class"
-                    [ngClass]="{ 'actions-column': col.field === 'actions' }">
+                    [ngClass]="{ 'actions-column': col.field === 'actions' }"
+                    [pSortableColumn]="col.field">
                     {{ col.header }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
                 </th>
             </tr>
         </ng-template>
@@ -43,10 +49,10 @@
                     (click)="col.field === 'actions' || OnClickItem(rowData)">
                     <div [ngSwitch]="col.field">
                         <div *ngSwitchCase="'actions'"
-                             class="text-right">
+                             class="text-center">
 
                             <naya-custom-dropdown [model]="rowData.actions">
-                                <i class="pi pi-ellipsis-v"></i>
+                                <i class="pi pi-ellipsis-v naya-custom-button-icon"></i>
                             </naya-custom-dropdown>
                         </div>
                         <span *ngSwitchDefault>{{ rowData[col.field] }}</span>
